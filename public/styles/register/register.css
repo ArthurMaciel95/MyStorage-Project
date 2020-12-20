@@ -8,7 +8,7 @@ main .container-register {
 
 main .container-register form {
   margin-top: 100px;
-  width: 50vw;
+  width: 60vw;
   font-size: var(--font-small);
   border-radius: 0px;
 }
@@ -35,4 +35,28 @@ main .container-register form a:hover {
 
 main .container-register form div .separate-anchor {
   color: rgb(165, 165, 165);
+}
+
+main .container-register form .break-input .wrap-lines {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+main .container-register form .break-input {
+  display: flex;
+  flex-direction: row;
+}
+
+main .container-register form .break-input .input-image-area {
+  width: 50%;
+}
+main .container-register form .break-input .input-image-area input {
+  width: 100%;
+}
+main .container-register form .break-input .input-image-area img {
+  object-fit: cover;
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
 }

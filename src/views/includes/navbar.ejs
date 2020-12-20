@@ -14,12 +14,16 @@
 
         <%if(user) {%>
 
-          <a href="/user/profile">
+          <a href="/user/profile/<%= user._id %>">
             <li id="user-name">
-              <img src="../../../assets/img/avatar-male.jpg" alt="no-avatar">
-              <p>Olá, <%= user.name %>
-              </p>
-              <a class="logout" href="/user/logout">sair</a>
+              <%if(!user.photo) {%>
+                <img src="../../../assets/img/avatar-male.jpg" alt="no-avatar">
+                <%}else{%>
+                  <img src="../../../assets/img/<%= user.photo %>" alt="no-avatar">
+                  <%}%>
+                    <p>Olá, <%= user.name %>
+                    </p>
+                    <a class="logout" href="/user/logout">sair</a>
             </li>
           </a>
 

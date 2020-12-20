@@ -45,6 +45,7 @@ nav ul #user-name .logout:hover {
 }
 nav ul #user-name img {
   width: 30px;
+  height: 30px;
   display: flex;
   border-radius: 50%;
   object-fit: cover;

@@ -6,9 +6,9 @@ const userSchema = new mongoose.Schema({
   photo: { type: String },
   name: { type: String, required: true },
   email: { type: String, required: true },
-  birthday: { type: String },
-  country: { type: String },
-  city: { type: String },
+  birthday: { type: String, required: true },
+  country: { type: String, required: true },
+  city: { type: String, required: true },
 });
 
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
