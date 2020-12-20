@@ -1,0 +1,34 @@
+<%- include('includes/header')%>
+<%- include('includes/navbar')%>
+<main class="container-view">
+  <article>
+    <h1><%- post.title%></h1>
+    <p><%- post.subtitle%></p>
+    <section class="area-view">
+
+      <div>
+        <% post.tags.forEach(tag=>{%>
+        <span class="tags"><%= tag%></span>
+        <%});%>
+      </div>
+      <section class="photo-view">
+        <%if(post.photo) { %>
+        <img src="../../assets/img/<%- post.photo %>" alt="<%- post.title %>">
+
+        <%} else {%>
+        <img src="../../assets/img/no-image-avaiable.png" alt="">
+        <%}%>
+     </section>
+        <p class="text-body">
+         <%- post.body %>
+        </p>
+      </section>
+  </article>
+</main>
+
+
+<%- include('includes/header')%>
+
+
+
+<!-- CONFIGURAR OS EDIT ROUTER -->

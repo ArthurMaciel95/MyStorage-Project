@@ -1,0 +1,61 @@
+<%- include('includes/header')%>
+  <%- include('includes/navbar')%>
+
+
+    <main>
+
+      <section class="container-forum">
+        <div class="header-forum">
+
+          <a class="a-button" href="/create-post">Create an Post</a>
+          <%- include('includes/message')%>
+        </div>
+
+
+        <%if (posts.length <=0) { %>
+
+          <h2>Não existem posts a serem mostrados</h1>
+
+            <%} else {%>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>Mensagem</th>
+                    <th>Tag</th>
+                    <th>actions</th>
+                  </tr>
+                </thead>
+                <% posts.forEach(post=> {%>
+                  <tr>
+                    <td><a class="link-slug" href="forum/<%= post.slug %>">
+                        <%= post.title %>
+                      </a></td>
+
+                    <td class="body-data">
+                      <%= post.body %>
+                    </td>
+                    <td>
+                      <% post.tags.forEach(tag=>{%>
+                        <span class="tags">
+                          <%= tag%>
+                        </span>
+                        <%});%>
+
+                    </td>
+                    <td><a class="editar" href="/create-post/<%= post.slug%>/edit">Editar</a></td>
+                  </tr>
+
+
+                  <% })%>
+              </table>
+              <%}%>
+      </section>
+
+    </main>
+
+
+    <%- include('includes/header')%>
+
+
+      <!-- CONSERTAR O FLASH MESSAGE -->

@@ -1,0 +1,62 @@
+.container-profile {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 80vw;
+  margin: auto auto;
+  align-items: center;
+  flex-direction: column;
+}
+.container-profile form {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+}
+
+.container-profile form input .container-profile form .image-area {
+  display: flex;
+
+  flex-direction: column;
+
+  padding-right: 30px;
+}
+
+.container-profile form .image-area img {
+  display: flex;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto;
+}
+
+.container-profile form .data-area {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  border-left: 1px solid rgba(220, 20, 60, 0.337);
+}
+
+.user-data {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  color: crimson;
+  font-family: 'Archivo', sans-serif;
+  width: 75%;
+  border-radius: 5px;
+}
+.user-data table {
+  width: 100%;
+  padding: 10px;
+}
+.user-data table tr td {
+  padding: 10px;
+}
+.user-data table tr td p {
+  color: rgb(106, 106, 106);
+  display: inline;
+}
+
+.user-data tr:nth-child(even) {
+  background-color: rgb(221, 221, 221);
+}

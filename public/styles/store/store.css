@@ -1,0 +1,82 @@
+.container-store {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90vw;
+  margin: 0 auto;
+
+  font-size: var(--font-small);
+}
+
+.container-store .store-area {
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 100px;
+  display: flex;
+}
+
+.container-store .store-area ul {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  text-shadow: darkgray 0px 1px;
+  font-family: 'Archivo', sans-serif;
+}
+
+.container-store .store-area ul li {
+  list-style-type: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.container-store .store-area .posts-area .posts a img {
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+.container-store .store-area .posts-area .posts a:hover {
+  transform: scale(1.1);
+}
+.container-store .store-area ul li a {
+  color: crimson;
+  text-decoration: none;
+}
+.container-store .store-area ul li a:hover {
+  text-decoration: underline;
+}
+
+.container-store .store-area .posts-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px;
+}
+
+.container-store .store-area .posts-area .posts h3 {
+  color: rgb(51, 51, 51);
+}
+.container-store .store-area .posts-area .posts p {
+  color: rgb(143, 143, 143);
+}
+.container-store .store-area .posts-area .posts button {
+  background-color: rgb(208, 28, 64);
+  color: white;
+  font-size: var(--font-xsmall);
+  font-weight: 700;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container-store .store-area .posts-area .posts img {
+  display: flex;
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+}
+
+.container-store .store-area .posts-area .posts .button-area {
+  display: flex;
+  justify-content: flex-end;
+}

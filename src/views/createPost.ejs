@@ -1,0 +1,31 @@
+<%- include('includes/header')%>
+<%- include('includes/navbar')%>
+<main>
+  <section class="container-contact">
+    <article>
+      <h2>CREATE AN POST</h2>
+      <P>Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Corporis<br /> repellendus possimus
+        expedita vitae nesciunt tenetur</P>
+    </article>
+    <form method="POST" enctype="multipart/form-data">
+      <h2>Criar um Post</h2>
+      <label for="photo">Imagem</label>
+      <input type="file" name="photo">
+      <label for="title">Assunto</label>
+      <input type="text" name="title" id="">
+      <label for="subtitle">Subtítulo</label>
+      <input type="text" name="subtitle" id="">
+      <label for="tags">tag</label>
+
+      <input type="text" name="tags" id="">
+      <small>separe as tag(s) por vírgula.</small>
+      <label for="body">Mensagem</label>
+      <textarea name="body" id="" cols="30" rows="10"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</main>
+
+<%- include('includes/header')%>

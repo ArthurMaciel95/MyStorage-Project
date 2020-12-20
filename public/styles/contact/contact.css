@@ -1,0 +1,49 @@
+.container-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.container-contact article {
+  padding: 20px;
+  margin-right: 80px;
+}
+main .container-contact form button {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: crimson;
+  border: none;
+  color: white;
+  font-size: var(--font-medium);
+  font-weight: 700;
+}
+.container-contact article h2 {
+  color: white;
+  font-size: 3rem;
+}
+.container-contact article p {
+  color: rgb(221, 221, 221);
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: rgb(232, 62, 96);
+  padding: 40px;
+  border-radius: 5px;
+  font-size: var(--font-small);
+}
+
+form input,
+textarea {
+  font-family: 'Archivo', sans-serif;
+  resize: none;
+  padding: 10px;
+  border: rgb(214, 214, 214) 1px solid;
+  color: rgb(102, 102, 102);
+}

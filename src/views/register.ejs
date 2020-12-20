@@ -1,0 +1,42 @@
+<%- include('includes/header')%>
+  <%- include('includes/navbar')%>
+
+
+    <main>
+      <section class="container-register">
+
+
+        <!-- <form method="POST">
+
+      <h2>i have an account!</h2>
+
+      <%- include('includes/message')%>
+      <label for="email">Email</label>
+      <input type="email" name="email">
+      <label for="password">Password</label>
+      <input type="password" name="password">
+      <a href="/forget-password">forgot your password?</a>
+      <button type="submit"> Login</button>
+    </form> -->
+        <form method="POST">
+          <h2>you don't have account?</h2>
+          <%- include('includes/message')%>
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <label for="email">Email</label>
+            <input type="email" name="email">
+            <label for="password">Password</label>
+            <input type="password" name="password">
+            <label for="birthday">birthday</label>
+            <input type="text" name="birthday">
+            <label for="country">Country</label>
+            <input type="text" name="country">
+            <label for="city">city</label>
+            <input type="text" name="city">
+            <button type="submit"> Register</button>
+        </form>
+      </section>
+
+    </main>
+
+    <%- include('includes/header')%>

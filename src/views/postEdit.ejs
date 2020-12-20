@@ -1,0 +1,35 @@
+<%- include('includes/header')%>
+<%- include('includes/navbar')%>
+<main>
+  <section class="container-contact">
+    <article>
+      <h2>EDIT AN POST</h2>
+      <P>Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Corporis<br /> repellendus possimus
+        expedita vitae nesciunt tenetur</P>
+    </article>
+
+    <form method="POST" enctype="multipart/form-data">
+      <h2>Editar um Post</h2>
+      <%- include('includes/message')%>
+      <label for=" photo">Imagem</label>
+      <input type="file" name="photo">
+      <%if (post.photo) {%>
+      <img src="/assets/img/<%- post.photo%>" width="200px" alt="">
+      <% } %>
+      <label for="title">Assunto</label>
+      <input type="text" name="title" id="" value="<%= post.title %>">
+      <label for="subtitle">Subtítulo</label>
+      <input type="text" name="subtitle" id="" value="<%= post.subtitle %>">
+      <label for="tags">tag</label>
+      <input type="text" name="tags" id="" value="<%= post.tags%>">
+      <label for="body">Mensagem</label>
+      <textarea name="body" id="" cols="30" rows="10"><%= post.body %></textarea>
+      <button type="submit">Enviar</button>
+
+    </form>
+  </section>
+
+</main>
+
+<%- include('includes/header')%>

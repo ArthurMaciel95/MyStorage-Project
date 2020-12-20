@@ -1,0 +1,53 @@
+.container-view {
+  margin: 0 auto;
+  width: 80vw;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-view p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(221, 221, 221);
+  font-family: 'Archivo', sans-serif;
+  font-stretch: extra-expanded;
+}
+
+.container-view h1 {
+  font-size: var(--font-lager);
+  color: white;
+  font-weight: 700;
+}
+
+.area-view {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  height: 50vh;
+  width: 80vw;
+}
+
+.tags {
+  padding: 4px 6px;
+  background: var(--tags-color);
+  color: white;
+  border-radius: 10px;
+  width: fit-content;
+  font-size: var(--font-small);
+}
+.photo-view {
+  padding: 20px;
+}
+
+.photo-view img {
+  width: 100px;
+  height: 100px;
+  border-radius: 3rem;
+  object-fit: fill;
+}
+
+.container-view article .text-body {
+  color: var(--tags-color);
+}

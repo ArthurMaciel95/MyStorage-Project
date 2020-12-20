@@ -1,0 +1,89 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(7, 7, 7, 0.385);
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  font-size: var(--font-small);
+}
+
+nav #logo {
+  color: white;
+  font-weight: 700;
+}
+nav #logo:hover {
+  color: crimson;
+  cursor: pointer;
+}
+nav ul {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: start;
+}
+
+nav ul #user-name {
+  display: flex;
+  flex-direction: row;
+}
+nav ul #user-name p {
+  padding-left: 10px;
+  display: flex;
+  color: rgb(151, 226, 31);
+  align-items: center;
+}
+nav ul #user-name .logout {
+  text-decoration: none;
+  transition: none;
+}
+nav ul #user-name .logout:hover {
+  text-decoration: underline;
+  transition: none;
+  color: rgb(226, 197, 31);
+}
+nav ul #user-name img {
+  width: 30px;
+  display: flex;
+  border-radius: 50%;
+  object-fit: cover;
+}
+nav ul a {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color, 0.3s ease;
+  margin-left: 10px;
+}
+
+nav ul li a:hover {
+  color: rgb(178, 214, 17);
+  transition: color, 0.3s ease;
+}
+
+nav ul li a button {
+  padding: 10px;
+  background-color: rgb(226, 40, 40);
+  color: white;
+  border-radius: 1.2rem;
+  border: none;
+
+  font-weight: 700;
+  align-items: center;
+  transition: background-color 0.3s ease-in;
+  cursor: pointer;
+}
+
+nav ul li a button:hover {
+  background-color: rgb(201, 36, 36);
+  transition: background-color 0.3s ease;
+}

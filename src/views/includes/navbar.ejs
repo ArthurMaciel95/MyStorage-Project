@@ -1,0 +1,34 @@
+<nav>
+  <ul>
+    <li id="logo">NIKE.COM</li>
+  </ul>
+  <ul>
+
+
+    <% h.menu.forEach( menus=> { %>
+
+      <li><a href="<%= menus.slug%>">
+          <%= menus.name %>
+        </a></li>
+      <%})%>
+
+        <%if(user) {%>
+
+          <a href="/user/profile">
+            <li id="user-name">
+              <img src="../../../assets/img/avatar-male.jpg" alt="no-avatar">
+              <p>Olá, <%= user.name %>
+              </p>
+              <a class="logout" href="/user/logout">sair</a>
+            </li>
+          </a>
+
+
+
+
+          <%} else {%>
+            <li><a href="/user/login"><button>sign up</button></a></li>
+
+            <%}%>
+  </ul>
+</nav>

@@ -1,0 +1,66 @@
+<%- include('includes/header')%>
+  <%- include('includes/navbar')%>
+    <main>
+      <section class="container-profile">
+        <form method="POST" enctype="multipart/form-data">
+          <div class="image-area">
+            <h3>Meu Perfil</h3>
+            <img src="../../assets/img/no-avatar.png" alt="">
+            <input type="file" name="" id="">
+          </div>
+          <div class="data-area">
+            <label for="nome">nome completo:</label>
+            <input type="text" name="nome" value="<%= user.name %>">
+            <label for="e-mail">E-mail</label>
+            <input type="email" name="email" value="<%= user.email%>">
+            <button type="submit">Salvar alterações</button>
+          </div>
+
+        </form>
+
+        <section class="user-data">
+          <h3>Informações</h3>
+          <table>
+            <tr>
+              <td>ID: <p>
+                  <%= user._id%>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>Nome: <p>
+                  <%= user.name%>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>email: <p>
+                  <%= user.email%>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>country: <p>
+                  <%= user.country%>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>city: <p>
+                  <%= user.city%>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>birthday: <p>
+                  <%= user.birthday%>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </section>
+      </section>
+
+    </main>
+
+    <%- include('includes/header')%>

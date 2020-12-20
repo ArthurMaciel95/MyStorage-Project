@@ -1,0 +1,21 @@
+@media (max-width: 1097px) {
+  .container-1 {
+    display: flex;
+    flex-direction: row;
+  }
+  .container-store .store-area .posts-area {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .container-store .store-area .posts-area {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-store .store-area .posts-area {
+    grid-template-columns: 1fr;
+  }
+}
