@@ -7,17 +7,10 @@ exports.profile = (req, res) => {
 
 exports.profileAction = async (req, res) => {
   try {
-    const user = await User.findOneAndUpdate(
-      { _id: req.user._id },
-      {
-        photo: req.body.photo,
-        name: req.body.name,
-        email: req.body.email,
-        birthday: req.body.birthday,
-        country: req.body.country,
-        city: req.body.city,
-      },
-    );
+    const user = await User.findOneAndUpdate({ _id: req.user._id }, req.body, {
+      new: true, //Retornar NOVO item atualizado
+      runValidators: true,
+    });
   } catch (error) {
     console.log(error);
     req.flash('errors', 'error inesperado ocorreu!');
