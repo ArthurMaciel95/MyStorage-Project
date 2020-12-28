@@ -3,9 +3,9 @@ exports.obj = {
   userName: 'Arthur Rocha',
 };
 exports.menu = [
-  { name: 'Home', slug: '/' },
-  { name: 'store', slug: '/store' },
-  { name: 'contact', slug: '/contact' },
-  { name: 'who us', slug: '/whoUs' },
-  { name: 'Forum', slug: '/forum' },
+  { name: 'Home', slug: '/', guest: true, logged: true },
+  { name: 'store', slug: '/store', guest: false, logged: true },
+  { name: 'contact', slug: '/contact', guest: true, logged: true },
+  { name: 'who us', slug: '/whoUs', guest: true, logged: true },
+  { name: 'Forum', slug: '/forum', guest: false, logged: true },
 ];
