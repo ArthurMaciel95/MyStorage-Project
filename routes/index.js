@@ -19,7 +19,12 @@ router.get('/user/login', userController.login);
 router.post('/user/login', userController.loginAction);
 
 router.get('/user/register', userController.register);
-router.post('/user/register', userController.registerAction);
+router.post(
+  '/user/register',
+  imageMiddleware.upload,
+  imageMiddleware.resize,
+  userController.registerAction,
+);
 router.get('/user/logout', userController.logout);
 
 router.get(

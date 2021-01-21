@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const slug = require('slug');
 mongoose.Promise = global.Promise;
 
+const ObjectId = mongoose.SchemaTypes.ObjectId;
+
 const postSchema = new mongoose.Schema({
   photo: String,
   title: { type: String, trim: true, required: 'o post precisa de um titulo' },
@@ -13,6 +15,7 @@ const postSchema = new mongoose.Schema({
     required: 'o corpo precisa ser preenchido',
   },
   tags: [String],
+  author: ObjectId,
   createDate: { type: Date, default: Date.now },
 });
 

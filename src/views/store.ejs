@@ -1,37 +1,45 @@
 <%- include('includes/header')%>
-<%- include('includes/navbar')%>
+  <%- include('includes/navbar')%>
 
 
-<main class="container-store">
-  <section class="store-area">
+    <main class="container-store">
+      <section class="store-area">
 
-    <ul>
-      <% tags.forEach( tag => {%>
+        <ul>
+          <% tags.forEach( tag=> {%>
 
-      <li class="tag"> <a href="/store/?t=<%- tag._id %>"><%- tag._id %>(<%- tag.count%>)</a></li>
-
-
-      <%});%>
-    </ul>
+            <li class="tag"> <a href="/store/?t=<%- tag._id %>">
+                <%- tag._id %>(<%- tag.count%>)
+              </a></li>
 
 
-    <section class="posts-area">
-      <% posts.forEach( posts => {%>
-      <div class="posts">
-        <%if(posts.photo) {%>
-        <a href="forum/<%= posts.slug %>"><img src="/assets/img/<%- posts.photo%>" alt=""></a>
-        <%} else {%>
-        <a href="forum/<%= posts.slug %>"><img src="../../assets/img/no-image-avaiable.png" alt="no-photo"></a>
-        <%}%>
-        <h3><%= posts.title %></h3>
-        <p><%= posts.subtitle%></p>
-
-      </div>
-      <%});%>
-    </section>
-  </section>
+            <%});%>
+        </ul>
 
 
-</main>
+        <section class="posts-area">
+          <% posts.forEach( posts=> {%>
+            <div class="posts">
+              <%if(posts.photo) {%>
+                <a href="forum/<%= posts.slug %>"><img src="/assets/img/<%- posts.photo%>" alt=""></a>
+                <%} else {%>
+                  <a href="forum/<%= posts.slug %>"><img src="../../assets/img/no-image-avaiable.png" alt="no-photo"></a>
+                  <%}%>
+                    <h3>
+                      <%= posts.title %>
+                    </h3>
+                    <p>
+                      <%= posts.subtitle%>
+                    </p>
+                    <p>Author:<%= posts.author%>
+                    </p>
 
-<%- include('includes/header')%>
+            </div>
+            <%});%>
+        </section>
+      </section>
+
+
+    </main>
+
+    <%- include('includes/header')%>

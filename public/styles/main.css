@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 :root {
-  --primary-color: #ca1234;
-  --tags-color: #f72f4a;
-  --hover-color: rgb(178, 214, 17);
-  --segundary-color: rgb(230, 230, 230);
-
   --font-lager: 3rem;
   --font-medium: 1.5rem;
   --font-small: 0.85rem;
@@ -19,14 +14,34 @@
 
 body,
 html {
+  --primary-color: #ca1234;
+  --tags-color: #f72f4a;
+  --hover-color: rgb(178, 214, 17);
+  --segundary-color: rgb(230, 230, 230);
+  --background-primary-color: #d87272;
+  --background-secondary-color: #ca1234;
+
   font-family: 'Poppins', sans-serif;
-  background-image: linear-gradient(#d87272, #ca1234);
+  background-image: linear-gradient(
+    var(--background-primary-color),
+    var(--background-secondary-color)
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-size: 16px;
   position: absulute;
   outline: none;
 }
+
+body.dark-theme {
+  --primary-color: #c4c4c4;
+  --tags-color: #f3f3f3;
+  --hover-color: rgb(17, 152, 214);
+  --segundary-color: rgb(111, 111, 111);
+  --background-primary-color: #3c3c3c;
+  --background-secondary-color: #212121;
+}
+
 h1 {
   color: var(--segundary-color);
   font-size: 4rem;
