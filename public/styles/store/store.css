@@ -34,9 +34,7 @@
   transition: transform 0.3s ease;
   transform: scale(1);
 }
-.container-store .store-area .posts-area .posts a:hover {
-  transform: scale(1.1);
-}
+
 .container-store .store-area ul li a {
   color: crimson;
   text-decoration: none;
@@ -74,9 +72,24 @@
   object-fit: cover;
   width: 100%;
   height: 150px;
+  transition: filter 0.3s ease-out;
+}
+
+.container-store .store-area .posts-area .posts img:hover {
 }
 
 .container-store .store-area .posts-area .posts .button-area {
   display: flex;
   justify-content: flex-end;
+}
+
+.container-store .store-area .posts-area .posts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container-store .store-area .posts-area .posts small {
+  display: flex;
+  align-self: flex-end;
 }

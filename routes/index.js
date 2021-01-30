@@ -10,6 +10,7 @@ const PostController = require('../src/controllers/PostController');
 const profileController = require('../src/controllers/profileController');
 const imageMiddleware = require('../src/middlewares/imageMiddleware');
 const authMiddleware = require('../src/middlewares/authMiddleware');
+const passwordController = require('../src/controllers/userController');
 
 router.get('/', HomeController.paginaInicial);
 router.get('/contact', ContactController.contact);
@@ -27,6 +28,8 @@ router.post(
 );
 router.get('/user/logout', userController.logout);
 
+router.get('/users', authMiddleware.isLogged, userController.users);
+
 router.get(
   '/user/profile/:_id',
   authMiddleware.isLogged,
@@ -40,6 +43,18 @@ router.post(
   imageMiddleware.upload,
   imageMiddleware.resize,
   profileController.profileAction,
+);
+
+router.get(
+  '/profile/password',
+  authMiddleware.isLogged,
+  passwordController.changePassword,
+);
+
+router.post(
+  '/profile/password',
+  authMiddleware.isLogged,
+  authMiddleware.changePasswordAction,
 );
 
 router.get('/store', authMiddleware.isLogged, storeController.market);

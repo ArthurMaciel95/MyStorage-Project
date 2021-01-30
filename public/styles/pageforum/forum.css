@@ -84,3 +84,8 @@ small {
 .body-data {
   max-width: 500px;
 }
+
+.header-forum {
+  display: flex;
+  flex-direction: row;
+}

@@ -4,28 +4,31 @@
       <section class="container-profile">
         <form method="POST" enctype="multipart/form-data">
           <%- include('includes/message')%>
-            <div class="image-area">
-              <h3>Meu Perfil</h3>
-              <%if(!user.photo) {%>
-                <img src="../../assets/img/no-avatar.png" alt="">
-                <%} else {%>
-                  <img src="../../assets/img/<%= user.photo %>" alt="">
-                  <%}%>
-                    <input type="file" name="photo" id="" value="../../assets/img/<%= user.photo %>">
-            </div>
-            <div class="data-area">
-              <label for="name">nome completo:</label>
-              <input type="text" name="name" value="<%= user.name %>">
-              <label for="e-mail">E-mail</label>
-              <input type="email" name="email" value="<%= user.email%>">
-              <label for="country">country</label>
-              <input type="text" name="country" value="<%= user.country%>">
-              <label for="city">city</label>
-              <input type="text" name="city" value="<%= user.city%>">
-              <label for="birthday">birthday</label>
-              <input type="text" name="birthday" value="<%= user.birthday%>">
-              <button type="submit">Salvar alterações</button>
-            </div>
+            <section class="form-data-row">
+              <div class="image-area">
+                <h3>Meu Perfil</h3>
+                <%if(!user.photo) {%>
+                  <img src="../../assets/img/no-avatar.png" alt="">
+                  <%} else {%>
+                    <img src="../../assets/img/<%= user.photo %>" alt="">
+                    <%}%>
+                      <input type="file" name="photo" id="" value="../../assets/img/<%= user.photo %>">
+              </div>
+              <div class="data-area">
+                <label for="name">nome completo:</label>
+                <input type="text" name="name" value="<%= user.name %>">
+                <label for="e-mail">E-mail</label>
+                <input type="email" name="email" value="<%= user.email%>">
+                <label for="country">country</label>
+                <input type="text" name="country" value="<%= user.country%>">
+                <label for="city">city</label>
+                <input type="text" name="city" value="<%= user.city%>">
+                <label for="birthday">birthday</label>
+                <input type="text" name="birthday" value="<%= user.birthday%>">
+                <button type="submit">Salvar alterações</button>
+                <a href="/profile/password">change password</a>
+              </div>
+            </section>
 
         </form>
 

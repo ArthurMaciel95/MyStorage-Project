@@ -1,0 +1,60 @@
+<%- include('includes/header')%>
+    <%- include('includes/navbar')%>
+
+
+        <main>
+
+            <section class="container-users">
+                <div class="header-forum">
+                </div>
+
+
+
+
+
+
+
+                <table class="user-container">
+                    <thead>
+                        <tr>
+                            <th>photo</th>
+                            <th>Nome</th>
+                            <th>email</th>
+                            <th>birthday</th>
+                            <th>country</th>
+                            <th>city</th>
+                        </tr>
+                    </thead>
+                    <% users.forEach(user=> {%>
+                        <tbody>
+                            <tr>
+                                <td class="page-user-img-area">
+                                    <img class="page-user-img" src="./assets/img/<%= user.photo %>" alt="photo user">
+                                </td>
+                                <td>
+                                    <%= user.name %>
+                                </td>
+                                <td>
+                                    <%= user.email %>
+                                </td>
+                                <td>
+                                    <%= user.birthday %>
+                                </td>
+                                <td>
+                                    <%= user.country %>
+                                </td>
+                                <td>
+                                    <%= user.city %>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        <% })%>
+                </table>
+
+            </section>
+
+        </main>
+
+
+        <%- include('includes/header')%>

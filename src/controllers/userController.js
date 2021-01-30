@@ -45,3 +45,20 @@ exports.logout = (req, res) => {
   req.logout();
   res.redirect('/');
 };
+
+exports.users = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.render('users', { users });
+  } catch (e) {
+    console.log(e);
+    req.status = 500;
+    req.flash('errors', 'não foi possivel acessar a basé de dados!');
+  }
+
+  res.redirect('/forum');
+};
+
+exports.changePassword = (req, res) => {
+  res.render('password');
+};

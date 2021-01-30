@@ -1,0 +1,19 @@
+.user-container {
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 3px;
+  font-size: var(--font-xsmall);
+}
+.user-container a {
+  color: var(--primary-color);
+}
+
+.page-user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-container tr:nth-child(even) {
+  background-color: rgb(213, 213, 213);
+}

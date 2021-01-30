@@ -14,9 +14,13 @@ exports.profileAction = async (req, res) => {
   } catch (error) {
     console.log(error);
     req.flash('errors', 'error inesperado ocorreu!');
-    res.redirect('/profile');
+    res.redirect(`/user/profile/${req.params._id}`);
     return;
   }
   req.flash('success', 'Perfil atualizado com sucesso!');
   res.redirect('/forum');
+};
+
+exports.changePassword = (req, res) => {
+  res.render('password');
 };
