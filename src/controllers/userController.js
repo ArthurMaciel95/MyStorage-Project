@@ -1,4 +1,6 @@
 const User = require('../models/User');
+const crypto = require('crypto');
+const mailHandler = require('../handlers/mailHandler');
 
 exports.login = (req, res) => {
   res.render('login');
@@ -59,6 +61,86 @@ exports.users = async (req, res) => {
   res.redirect('/forum');
 };
 
-exports.changePassword = (req, res) => {
+exports.changePassword = async (req, res) => {
   res.render('password');
+};
+
+exports.forget = (req, res) => {
+  res.render('forget');
+};
+
+exports.forgetAction = async (req, res) => {
+  const user = await User.findOne({ email: req.body.email }).exec();
+  if (!user) {
+    req.flash('errors', 'O e-mail não foi encontrado na base de dados.');
+    res.redirect('/user/forget-password');
+    return;
+  }
+
+  user.resetPasswordToken = crypto.randomBytes(20).toString('hex');
+  user.resetPasswordExpires = Date.now() + 3600000;
+
+  await user.save();
+
+  const resetLink = `http://${req.headers.host}/user/reset/${user.resetPasswordToken}`;
+  const to = `${user.name} <${user.email}>`;
+  const html = `Testando e-mail com link: <br/> <a href="${resetLink}">Resetar Sua senha</a>`;
+  const text = `Testando e-mail com link: ${resetLink}`;
+
+  mailHandler.send({
+    to,
+    subject: 'Resetar sua senha',
+    html,
+    text,
+  });
+
+  req.flash('success', `lhe enviamos um e-mail com intruções.`);
+  res.redirect('/user/login');
+};
+
+exports.forgetToken = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      resetPasswordToken: req.params._token,
+      resetPasswordExpires: { $gt: Date.now() },
+    }).exec();
+
+    if (!user) {
+      req.flash('errors', 'Token expirado!');
+      res.redirect('/user/login');
+      return;
+    }
+  } catch (e) {
+    console.log(e);
+  }
+  res.render('forgetPassword');
+};
+
+exports.forgetTokenAction = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      resetPasswordToken: req.params._token,
+      resetPasswordExpires: { $gt: Date.now() },
+    }).exec();
+
+    if (!user) {
+      req.flash('errors', 'Token expirado!');
+      res.redirect('/user/login');
+      return;
+    }
+
+    if (req.body.password !== req.body['password-repeat']) {
+      req.flash('errors', 'Seu e-mail ou senha estão incorretos');
+      res.redirect(`back`);
+      return;
+    }
+
+    user.setPassword(req.body.password, async () => {
+      await user.save();
+      req.flash('success', 'Senha alterada com sucesso!');
+      res.redirect(`/user/login`);
+    });
+  } catch (e) {
+    console.log(e);
+  }
 };

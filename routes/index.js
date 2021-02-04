@@ -30,6 +30,13 @@ router.get('/user/logout', userController.logout);
 
 router.get('/users', authMiddleware.isLogged, userController.users);
 
+router.get('/user/forget-password', userController.forget);
+
+router.post('/user/forget-password', userController.forgetAction);
+
+router.get('/user/reset/:_token', userController.forgetToken);
+router.post('/user/reset/:_token', userController.forgetTokenAction);
+
 router.get(
   '/user/profile/:_id',
   authMiddleware.isLogged,

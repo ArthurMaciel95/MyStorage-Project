@@ -1,28 +1,28 @@
 <%- include('includes/header')%>
-<%- include('includes/navbar')%>
+  <%- include('includes/navbar')%>
 
 
-<main>
-  <section class="container-register">
+    <main>
+      <section class="container-register">
 
 
-    <form method="POST">
+        <form method="POST">
 
-      <h2>i have an account!</h2>
+          <h2>i have an account!</h2>
 
-      <%- include('includes/message')%>
-      <label for="email">Email</label>
-      <input type="email" name="email">
-      <label for="password">Password</label>
-      <input type="password" name="password">
-      <div>
-        <a href="/forget-password">forgot your password?</a> <span class="separate-anchor">or</span><a href="/user/register"> i don't have a account</a>
-      </div>
-      <button type="submit"> Login</button>
-    </form>
+          <%- include('includes/message')%>
+            <label for="email">Email</label>
+            <input type="email" name="email">
+            <label for="password">Password</label>
+            <input type="password" name="password">
+            <div>
+              <a href="/user/forget-password">forgot your password?</a> <span class="separate-anchor">or</span><a href="/user/register"> i don't have a account</a>
+            </div>
+            <button type="submit"> Login</button>
+        </form>
 
-  </section>
+      </section>
 
-</main>
+    </main>
 
-<%- include('includes/header')%>
+    <%- include('includes/header')%>
