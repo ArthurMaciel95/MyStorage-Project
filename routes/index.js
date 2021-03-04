@@ -89,6 +89,6 @@ router.post(
   PostController.editAction,
 );
 
-router.get('/forum/:slug', authMiddleware.isLogged, PostController.view);
+router.get('/forum/:slug', PostController.deleteAction);
 
 module.exports = router;

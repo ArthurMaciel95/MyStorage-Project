@@ -46,6 +46,4 @@ postSchema.statics.getTagsList = function () {
   ]);
 };
 
-
-
 module.exports = mongoose.model('Post', postSchema);

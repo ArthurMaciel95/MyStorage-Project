@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 const session = require('express-session');
 const { middlewareGlobal } = require('./src/middlewares/global');
+const cors = require('cors');
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -14,7 +15,7 @@ const LocalStrategy = require('passport-local').Strategy;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(cors());
 
 app.use(cookieParser(process.env.SECRET));
 app.use(
@@ -26,8 +27,9 @@ app.use(
 );
 
 app.use(flash());
+
 app.set('views', path.resolve(__dirname, 'src', 'views'));
-app.set(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use(passport.initialize());
 app.use(passport.session());

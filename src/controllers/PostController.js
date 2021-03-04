@@ -11,7 +11,6 @@ exports.view = async (req, res) => {
 
 exports.createPost = (req, res) => {
   res.render('createPost');
-  console.log(req.user);
 };
 
 exports.createPostAction = async (req, res) => {
@@ -63,3 +62,18 @@ exports.editAction = async (req, res) => {
 
   res.redirect('/forum');
 };
+
+exports.deleteAction = async (req, res) => {
+  try {
+    const deletePost = await Post.deleteOne({ slug: req.params.slug });
+  } catch (e) {
+    console.error(e);
+    req.flash('errors', 'error ao tentar deletar o post');
+    res.redirect('/forum');
+    return;
+  }
+
+  req.flash('success', 'Post deletado com sucesso!');
+  res.redirect('/forum');
+};
+// IMPLEMENTAR DELETAR POST::

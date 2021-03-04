@@ -44,7 +44,10 @@
                         <%});%>
 
                     </td>
-                    <td><a class="editar" href="/create-post/<%= post.slug%>/edit">Editar</a></td>
+                    <td>
+                      <a class="editar" href="/create-post/<%= post.slug%>/edit">Editar</a>
+                      <a class="deletar" href="/forum/<%= post.slug %>">Deletar</a>
+                    </td>
                   </tr>
 
 

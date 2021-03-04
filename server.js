@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const port = process.env.PORT || 4449;
+const port = process.env.PORT || 4447;
 
 require('dotenv').config();
-require('./src/models/Post');
 
+require('./src/models/Post');
 const app = require('./app');
 
 mongoose

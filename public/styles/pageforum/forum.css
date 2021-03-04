@@ -81,6 +81,15 @@ small {
   border-bottom: #229d96 solid 2px;
 }
 
+.deletar {
+  padding: 4px 6px;
+  background: #f5075b;
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  text-decoration: none;
+  border-bottom: #ae164b solid 2px;
+}
+
 .body-data {
   max-width: 500px;
 }
